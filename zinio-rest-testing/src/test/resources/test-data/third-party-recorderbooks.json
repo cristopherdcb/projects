@@ -1,0 +1,12 @@
+{
+  "grant_type":"third_party",
+  "auth_data":{
+      "recordedBooks":{
+        "id":"id_value",
+        "expirationDate":"expiration_date_value",
+        "emailAddress":"username_value"
+      }
+  },
+  "client_id":"client_id_value",
+  "client_secret":"client_secret_value"
+}

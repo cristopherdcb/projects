@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="apiUrl">http://dev-core-dev10.zinio.com:7000/v1/</entry>
+    <entry key="authUrl">http://auth-dev.zinio.com/v1/</entry>
+	<entry key="webUrl">http://www-dev.zinio.com/</entry>
+	<entry key="clientId">81xow4xS1yKI2eduV6k3</entry>
+	<entry key="clientSecret">4wd2S6X1x3cb28B504vNUp70f1HwCWF6C8pIPVZs7Sz7967506</entry>
+	<entry key="username">automatedtestdev@gmail.com</entry>
+	<entry key="password">zinio123</entry>
+</properties>

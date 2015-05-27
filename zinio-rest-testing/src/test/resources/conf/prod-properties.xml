@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="apiUrl">http://api.zinio.com/v1/</entry>
+    <entry key="authUrl">http://auth.zinio.com/v1/</entry>
+	<entry key="webUrl">http://www.zinio.com/</entry>
+	<entry key="clientId">0ydEwmQUZj5NnIwOW5aS</entry>
+	<entry key="clientSecret">s9kXnRUZVEwGMFI7KlReaF7ma5zUUViAncoJzKz4oy08yl5thq</entry>
+	<entry key="username">testwsa@zinio.com</entry>
+	<entry key="password">qwerty1</entry>
+</properties>

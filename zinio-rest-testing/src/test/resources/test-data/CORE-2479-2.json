@@ -1,0 +1,31 @@
+{
+  "currency": "EUR",
+  "userDeviceId": "79199088",
+  "orderItems": [
+    {
+      
+    }
+  ],
+  "payments": [
+    {
+      "amount": "4.99",
+      "currencyCode": "USD",
+      "cvvToken": "*0e0Nx1yicbPmuoy",
+      "ccToken": "*0O0UK)zWao57mreFoqo5LrH6LBpgyMu(abtUNGZ",
+      "billingAddress": {
+        "state": "Gc",
+        "postalCode": "12355",
+        "firstName": "Tb",
+        "addressLine1": "B",
+        "country": "VE",
+        "city": "D"
+      },
+      "type": "creditCard",
+      "expireMonth": "02",
+      "expireYear": "2017"
+    }
+  ],
+  "refund": false,
+  "tax": 0,
+  "total": "4.99"
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="apiUrl">http://api-stg.zinio.com/v1/</entry>
+    <entry key="authUrl">http://auth-stg.zinio.com/v1/</entry>
+	<entry key="webUrl">http://www-stg.zinio.com/</entry>
+	<entry key="searchUrl">http://search-stg.zinio.com/</entry>
+	<entry key="clientId">96uBz5M4AJrAzWfadfWd</entry>
+	<entry key="clientSecret">jcOFFB4byfzBnxzj7P82jZBIHSODKkLZKkBWfLp3mRQxslLlGG</entry>
+	<entry key="username">automatedtest@gmail.com</entry>
+	<entry key="password">zinio123</entry>
+</properties>

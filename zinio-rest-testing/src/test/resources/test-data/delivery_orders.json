@@ -1,0 +1,10 @@
+{
+    "type":"partnerDelivery",
+    "orderItems":[{
+        "type":"type_value",
+        "numberOfIssues":"number_of_issues_value",
+        "sku":{
+            "id":"sku_id_value"
+        }
+    }]
+}

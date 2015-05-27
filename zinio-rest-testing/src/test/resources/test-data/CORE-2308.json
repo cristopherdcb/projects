@@ -1,0 +1,16 @@
+{
+    "grant_type": "password",
+    "client_id": "client_id_value",
+    "client_secret": "client_secret_value",
+    "username": "username_value",
+    "password": "password_value",
+    "scope": "read",
+    "device": {
+        "deviceId": "device_id_value",
+        "installationUuid": "installation_id_value",
+        "resWidth": 1920,
+        "resHeight": 1080,
+        "heapSize": 2048,
+        "applicationVersion": "v123"
+    }
+}

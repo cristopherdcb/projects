@@ -1,0 +1,37 @@
+{
+  "currency": "EUR",
+  "userDeviceId": "79199088",
+  "orderItems": [
+    {
+      "type": "single",
+      "price": "4.99",
+      "tax" : 0,
+      "quantity": "1",
+      "sku": {
+        "id": "416331625"
+      }
+    }
+  ],
+  "payments": [
+    {
+      "amount": "4.99",
+      "currencyCode": "USD",
+      "cvvToken": "W+Hshpmw8hw=",
+      "ccToken": "dN/gpMVH1Qgy9MVV0aZLs7xW/gSXvlDj",
+      "billingAddress": {
+        "state": "Gc",
+        "postalCode": "12355",
+        "firstName": "Tb",
+        "addressLine1": "B",
+        "country": "VE",
+        "city": "D"
+      },
+      "type": "creditCard",
+      "expireMonth": "01",
+      "expireYear": "2020"
+    }
+  ],
+  "refund": false,
+  "tax": 0,
+  "total": "4.99"
+}

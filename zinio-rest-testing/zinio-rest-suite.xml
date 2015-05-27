@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Zinio REST Scenarios">
+  	<test name="Checking no error message was prompt">
+  		<parameter name="json" value="CORE-2479.json"/> 
+  		<parameter name="statusCode" value="200" />
+  		<parameter name="username" value="automatedteststg@zinio.com" />
+  		<parameter name="password" value="zinio123" />
+	    <classes> 	
+	       <class name="com.zinio.rest.testing.scenarios.ScenarioCheckMessage" > 
+	       		<methods>
+                    <include name="checkMessage" />
+                </methods>
+           </class>
+	    </classes>
+  	</test>
+    <test name="Checking messages valid token existing issue">
+        <parameter name="json" value="CORE-2479-1.json" />
+        <parameter name="authStatusCode" value="200" />
+        <parameter name="orderStatusCode" value="400" />
+        <parameter name="errorCode" value="119"/>
+        <parameter name="username" value="automatedteststg@zinio.com" />
+  		<parameter name="password" value="zinio123" />
+        <classes>
+            <class name="com.zinio.rest.testing.scenarios.ScenarioCheckMessage">
+                <methods>
+                    <include name="checkMessageExistingSkuid" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="Checking messages login with invalid password">
+        <parameter name="statusCode" value="200" />
+        <parameter name="errorCode" value="250"/>
+        <parameter name="username" value="automatedteststg@zinio.com" />
+  		<parameter name="password" value="zinio123gjhg" />
+        <classes>
+            <class name="com.zinio.rest.testing.scenarios.ScenarioCheckMessage">
+                <methods>
+                    <include name="checkMessageLoginWithInvalidPassword" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checking messages bad parameter">
+        <parameter name="json" value="CORE-2479-2.json" />
+        <parameter name="authStatusCode" value="200" />
+        <parameter name="orderStatusCode" value="400" />
+        <parameter name="errorCode" value="116"/>
+        <parameter name="username" value="automatedteststg@zinio.com" />
+  		<parameter name="password" value="zinio123" />
+        <classes>
+            <class name="com.zinio.rest.testing.scenarios.ScenarioCheckMessage">
+                <methods>
+                    <include name="checkMessageBadParameter" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checking messages bad email">
+    	<parameter name="json" value="client-credentials.json" />
+        <parameter name="authStatusCode" value="200" />
+        <parameter name="userStatusCode" value="400" />
+        <parameter name="errorCode" value="242"/>
+        <parameter name="username" value="dskjhkbkl" />
+  		<parameter name="password" value="zinio123" />
+        <classes>
+            <class name="com.zinio.rest.testing.scenarios.ScenarioCheckMessage">
+                <methods>
+                    <include name="checkMessageBadEmail" />
+                </methods>
+            </class>
+        </classes>
+    </test> 
+    <test name="Checking messages empty email">
+    	<parameter name="json" value="client-credentials.json" />
+        <parameter name="authStatusCode" value="200" />
+        <parameter name="userStatusCode" value="400" />
+        <parameter name="errorCode" value="242"/>
+        <parameter name="username" value="" />
+  		<parameter name="password" value="zinio123" />
+        <classes>
+            <class name="com.zinio.rest.testing.scenarios.ScenarioCheckMessage">
+                <methods>
+                    <include name="checkMessageEmptyEmail" />
+                </methods>
+            </class>
+        </classes>
+    </test>  
+<!--     <test name="Get content descriptor"> -->
+<!--         <parameter name="statusCode" value="200" /> -->
+<!--         <parameter name="issueId" value="416335221"/> -->
+<!--         <parameter name="platformId" value="100008"/> -->
+<!--         <parameter name="username" value="automatedtest@gmail.com" /> -->
+<!--   		<parameter name="password" value="zinio123" /> -->
+<!--         <classes> -->
+<!--             <class name="com.zinio.rest.testing.scenarios.ScenarioContentDescriptor"> -->
+<!--                 <methods> -->
+<!--                     <include name="checkContentDescriptor" /> -->
+<!--                 </methods> -->
+<!--             </class> -->
+<!--         </classes> -->
+<!--     </test> -->
+<!--     <test name="Login with device ID and installation ID"> -->
+<!--         <parameter name="json" value="CORE-2308.json" /> -->
+<!--         <parameter name="statusCode" value="200" /> -->
+<!--         <parameter name="username" value="automatedtestdev@gmail.com" /> -->
+<!--   		<parameter name="password" value="zinio123" /> -->
+<!--   		<parameter name="deviceId" value="5c3ab311-164c-3674-9597-387635b06790" /> -->
+<!--   		<parameter name="installationId" value="8283bd9e-f68f-44b9-92e3-4a2dbe4a46cb" /> -->
+<!--         <classes> -->
+<!--             <class name="com.zinio.rest.testing.scenarios.ScenarioLoginWithDeviceInformation"> -->
+<!--                 <methods> -->
+<!--                     <include name="firstLogin" /> -->
+<!--                 </methods> -->
+<!--             </class> -->
+<!--         </classes> -->
+<!--     </test> -->
+<!--     <test name="Login with device ID and different instalation ID"> -->
+<!--         <parameter name="json" value="CORE-2308.json" /> -->
+<!--         <parameter name="statusCode" value="200" /> -->
+<!--         <parameter name="username" value="automatedtestdev@gmail.com" /> -->
+<!--   		<parameter name="password" value="zinio123" /> -->
+<!--   		<parameter name="deviceId" value="5c3ab311-164c-3674-9597-387635b06790" /> -->
+<!--         <classes> -->
+<!--             <class name="com.zinio.rest.testing.scenarios.ScenarioLoginWithDeviceInformation"> -->
+<!--                 <methods> -->
+<!--                     <include name="differentInstallationID" /> -->
+<!--                 </methods> -->
+<!--             </class> -->
+<!--         </classes> -->
+<!--     </test> -->
+<!--     <test name="Login ATG by password"> -->
+<!--         <parameter name="statusCode" value="200" /> -->
+<!--         <parameter name="clientId" value="1000023"/> -->
+<!--         <parameter name="username" value="automatedtest@gmail.com"/> -->
+<!--         <parameter name="clientId" value="zinio123"/> -->
+<!--         <classes> -->
+<!--             <class name="com.zinio.rest.testing.scenarios.ScenarioATGAuthorization"> -->
+<!--                 <methods> -->
+<!--                     <include name="loginByPassword" /> -->
+<!--                 </methods> -->
+<!--             </class> -->
+<!--         </classes> -->
+<!--     </test> -->
+<!--     <test name="Login ATG by credentials"> -->
+<!--         <parameter name="statusCode" value="200" /> -->
+<!--         <parameter name="clientId" value="101"/> -->
+<!--         <classes> -->
+<!--             <class name="com.zinio.rest.testing.scenarios.ScenarioATGAuthorization"> -->
+<!--                 <methods> -->
+<!--                     <include name="loginByCredentials" /> -->
+<!--                 </methods> -->
+<!--             </class> -->
+<!--         </classes> -->
+<!--     </test> -->
+<!--     <test name="Login ATG by internal proxy"> -->
+<!--         <parameter name="statusCode" value="200" /> -->
+<!--         <parameter name="clientId" value="101"/> -->
+<!--         <parameter name="username" value="automatedtest@gmail.com"/> -->
+<!--         <classes> -->
+<!--             <class name="com.zinio.rest.testing.scenarios.ScenarioATGAuthorization"> -->
+<!--                 <methods> -->
+<!--                     <include name="loginByInternalProxy" /> -->
+<!--                 </methods> -->
+<!--             </class> -->
+<!--         </classes> -->
+<!--     </test> -->
+<!--     <test name="Login ATG by third party"> -->
+<!--         <parameter name="statusCode" value="200" /> -->
+<!--         <parameter name="fbAccessToken" value="CAABmmAlnrEgBANjw1wC1mxcDuZCiVJgr8eoM0Xv4Qea6BnSor1jiHl5yAfpk1QThLXNCr35qXbRV3zlj2XfZA0UsNxZAZAASuQdvYXp6JalJ8HA8jAFkyEcWAaRFUekVnKuKJVlD3UGjFXfUfGf3iVtXfLgmlQQWl80pFzOzRYJ7vMUV4Pa5uUeYywlQ51Jh6boI7TFauwYsN00xrZAZB5"/> -->
+<!--         <parameter name="fbId" value="291967851005028"/> -->
+<!--         <parameter name="fbExpirationDate" value="2016-04-03T11:36:01.369+0200"/> -->
+<!--         <parameter name="clientId" value="1000023"/> -->
+<!--         <classes> -->
+<!--             <class name="com.zinio.rest.testing.scenarios.ScenarioATGAuthorization"> -->
+<!--                 <methods> -->
+<!--                     <include name="loginByThirdParty" /> -->
+<!--                 </methods> -->
+<!--             </class> -->
+<!--         </classes> -->
+<!--     </test> -->
+<!--     <test name="Checking order with credit card info encoded in base 64"> -->
+<!--   		<parameter name="json" value="WP-1927.json"/>  -->
+<!--   		<parameter name="statusCode" value="200" /> -->
+<!--   		<parameter name="creditCardNumber" value="[*0O0UK)zWao57mreFoqo5LrH6LBpgyMu(abtUNGZ]"/> -->
+<!--   		<parameter name="cvv" value="[*0e0Nx1yicbPmuoy]"/>  -->
+<!-- 		<parameter name="username" value="automatedtest@gmail.com" /> -->
+<!--   		<parameter name="password" value="zinio123" /> -->
+<!-- 	    <classes> 	 -->
+<!-- 	       <class name="com.zinio.rest.testing.scenarios.ScenarioOrders" >  -->
+<!-- 	       		<methods> -->
+<!--                     <include name="checkEncodeBase64CreditCardInfo" /> -->
+<!--                 </methods> -->
+<!--            </class> -->
+<!-- 	    </classes> -->
+<!--   	</test> -->
+<!--   	<test name="Archiving and restoring single entitlement">  -->
+<!--   		<parameter name="statusCode" value="200" /> -->
+<!-- 		<parameter name="username" value="automatedtest@gmail.com" /> -->
+<!--   		<parameter name="password" value="zinio123" /> -->
+<!--   		<parameter name="pageSize" value="100" /> -->
+<!-- 	    <classes> 	 -->
+<!-- 	       <class name="com.zinio.rest.testing.scenarios.ScenarioEntitlement" >  -->
+<!-- 	       		<methods> -->
+<!--                     <include name="archiveSingleEntitlement" /> -->
+<!--                 </methods> -->
+<!--            </class> -->
+<!-- 	    </classes> -->
+<!--   	</test>  -->
+<!--     <test name="Archiving and restoring multiple entitlement">  -->
+<!--   		<parameter name="statusCode" value="200" /> -->
+<!-- 		<parameter name="username" value="automatedtest@gmail.com" /> -->
+<!--   		<parameter name="password" value="zinio123" /> -->
+<!--   		<parameter name="pageSize" value="100" /> -->
+<!-- 	    <classes> 	 -->
+<!-- 	       <class name="com.zinio.rest.testing.scenarios.ScenarioEntitlement" >  -->
+<!-- 	       		<methods> -->
+<!--                     <include name="archiveMultipleEntitlement" /> -->
+<!--                 </methods> -->
+<!--            </class> -->
+<!-- 	    </classes> -->
+<!--   	</test> -->
+<!--   	<test name="Archiving and restoring entitlement for thir party">  -->
+<!--   		<parameter name="statusCode" value="200" /> -->
+<!-- 		<parameter name="username" value="automatedtest@gmail.com" /> -->
+<!--   		<parameter name="password" value="zinio123" /> -->
+<!--   		<parameter name="pageSize" value="100" /> -->
+<!--   		<parameter name="expirationDate" value="2015-06-03T11:36:01.369+0200"/> -->
+<!--   		<parameter name="id" value="291967851005028"/> -->
+<!--   		<parameter name="json" value="third-party-recorderbooks.json"/> -->
+<!--   		<parameter name="skuId" value="416326453"/> -->
+<!--   		<parameter name="numberOfIssues" value="3"/> -->
+<!--   		<parameter name="type" value="subscription"/> -->
+<!--   		<parameter name="deliveryJson" value="delivery_orders.json"/> -->
+<!-- 	    <classes> 	 -->
+<!-- 	       <class name="com.zinio.rest.testing.scenarios.ScenarioEntitlement" >  -->
+<!-- 	       		<methods> -->
+<!--                     <include name="archiveEntitlementThirdParty" /> -->
+<!--                 </methods> -->
+<!--            </class> -->
+<!-- 	    </classes> -->
+<!--   	</test>  -->
+<!-- 	<test name="Performing random search">  -->
+<!--   		<parameter name="statusCode" value="200" /> -->
+<!--   		<parameter name="platformId" value="100007"/>  -->
+<!-- 	    <classes> 	 -->
+<!-- 	       <class name="com.zinio.rest.testing.scenarios.ScenarioSearch" >  -->
+<!-- 	       		<methods> -->
+<!--                     <include name="search" /> -->
+<!--                 </methods> -->
+<!--            </class> -->
+<!-- 	    </classes> -->
+<!--   	</test> -->
+<!--   	<test name="Performing specific endpoint">  -->
+<!--   		<parameter name="statusCode" value="200" /> -->
+<!--   		<parameter name="platformId" value="100007"/>  -->
+<!--   		<parameter name="searchCriteria" value="Morn"/>  -->
+<!-- 	    <classes> 	 -->
+<!-- 	       <class name="com.zinio.rest.testing.scenarios.ScenarioSearch" >  -->
+<!-- 	       		<methods> -->
+<!--                     <include name="searchByCriteria" /> -->
+<!--                 </methods> -->
+<!--            </class> -->
+<!-- 	    </classes> -->
+<!--   	</test> -->
+<!--   	<test name="MINI_SUB campaign order processing">  -->
+<!--   		<parameter name="statusCode" value="200" /> -->
+<!--   		<parameter name="json" value="CORE-2454.json"/>  -->
+<!--   		<parameter name="username" value="automatedtest@gmail.com" /> -->
+<!-- 		<parameter name="password" value="zinio123" /> -->
+<!-- 	    <classes> 	 -->
+<!-- 	       <class name="com.zinio.rest.testing.scenarios.ScenarioCampaing" >  -->
+<!-- 	       		<methods> -->
+<!--                     <include name="campaingOrderProcessing" /> -->
+<!--                 </methods> -->
+<!--            </class> -->
+<!-- 	    </classes> -->
+<!--   	</test> -->
+<!--   	<test name="Check if auto renew type is present">  -->
+<!--   		<parameter name="statusCode" value="200" /> -->
+<!-- 		<parameter name="magazineId" value="90967603" /> -->
+<!-- 	    <classes> 	 -->
+<!-- 	       <class name="com.zinio.rest.testing.scenarios.ScenarioMagazine" >  -->
+<!-- 	       		<methods> -->
+<!--                     <include name="checkAutoRenewType" /> -->
+<!--                 </methods> -->
+<!--            </class> -->
+<!-- 	    </classes> -->
+<!--   	</test>  	 -->
+<!--   	<test name="Check if auto renew type is not present">  -->
+<!--   		<parameter name="statusCode" value="200" /> -->
+<!-- 		<parameter name="magazineId" value="6564920" /> -->
+<!-- 	    <classes> 	 -->
+<!-- 	       <class name="com.zinio.rest.testing.scenarios.ScenarioMagazine" >  -->
+<!-- 	       		<methods> -->
+<!--                     <include name="checkAutoRenewType" /> -->
+<!--                 </methods> -->
+<!--            </class> -->
+<!-- 	    </classes> -->
+<!--   	</test> -->
+</suite>  
