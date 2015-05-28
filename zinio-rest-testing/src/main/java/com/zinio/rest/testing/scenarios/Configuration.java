@@ -44,7 +44,7 @@ public class Configuration {
 	 * @param clientId
 	 * @param clientSecret
 	 */
-	public Configuration(String authUrl, String apiUrl, String clientId, String clientSecret,String webUrl, String searchUrl, String username, String password){
+	Configuration(String authUrl, String apiUrl, String clientId, String clientSecret,String webUrl, String searchUrl, String username, String password){
 		this.authUrl=authUrl;
 		this.apiUrl=apiUrl;
 		this.clientId=clientId;

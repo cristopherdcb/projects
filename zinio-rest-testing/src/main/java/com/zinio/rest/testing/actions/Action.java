@@ -7,7 +7,7 @@ import com.zinio.rest.testing.scenarios.Configuration;
  * Sets commons elements for actions
  * @author Cristopher Castillo
  */
-public class Action {
+class Action {
 	/**
 	 * Environment configuration
 	 */
@@ -24,7 +24,7 @@ public class Action {
 	 * Action constructor
 	 * @param configuration
 	 */
-	public Action(Configuration configuration){
+	Action(Configuration configuration){
 		this.configuration = configuration;
 	}
 }

@@ -14,7 +14,7 @@ import org.testng.asserts.SoftAssert;
  * Parent class which sets general properties for test
  * @author Cristopher Castillo
  */
-public class Scenario {
+class Scenario {
 	/**
 	 * Environment configuration
 	 */
@@ -22,7 +22,7 @@ public class Scenario {
 	/**
 	 * Contain data test for scenarios   
 	 */
-	protected static Properties environmentProperties;
+	private static Properties environmentProperties;
 	/**
 	 * Path to JSON directory
 	 */
@@ -57,7 +57,7 @@ public class Scenario {
 		try	{
 			Reporter.log(testContext.getCurrentXmlTest().getSuite().getName());
 			setEnvironment();
-			jsonDirectory="test-classes"+System.getProperty("file.separator")+"test-data"+System.getProperty("file.separator");
+			jsonDirectory="classes"+System.getProperty("file.separator")+"test-data"+System.getProperty("file.separator");
 		}
 		catch(Exception e){
 			Reporter.log("The REST test couldn't be launched: " + e.getMessage());
@@ -72,16 +72,16 @@ public class Scenario {
 	private void setEnvironment() throws InvalidPropertiesFormatException, FileNotFoundException, IOException{
 		environmentProperties = new Properties();
 		if(System.getProperty("environment").equals(DEV)){
-			environmentProperties.loadFromXML(new FileInputStream("test-classes"+System.getProperty("file.separator")+"conf"+System.getProperty("file.separator")+DEV+"-properties.xml"));
+			environmentProperties.loadFromXML(new FileInputStream("classes"+System.getProperty("file.separator")+"conf"+System.getProperty("file.separator")+DEV+"-properties.xml"));
 		}
 		else if(System.getProperty("environment").equals(STG)){
-			environmentProperties.loadFromXML(new FileInputStream("test-classes"+System.getProperty("file.separator")+"conf"+System.getProperty("file.separator")+STG+"-properties.xml"));
+			environmentProperties.loadFromXML(new FileInputStream("classes"+System.getProperty("file.separator")+"conf"+System.getProperty("file.separator")+STG+"-properties.xml"));
 		}
 		else if(System.getProperty("environment").equals(PROD)){
-			environmentProperties.loadFromXML(new FileInputStream("test-classes"+System.getProperty("file.separator")+"conf"+System.getProperty("file.separator")+PROD+"-properties.xml"));
+			environmentProperties.loadFromXML(new FileInputStream("classes"+System.getProperty("file.separator")+"conf"+System.getProperty("file.separator")+PROD+"-properties.xml"));
 		}
 		else{
-			environmentProperties.loadFromXML(new FileInputStream("test-classes"+System.getProperty("file.separator")+"conf"+System.getProperty("file.separator")+STG+"-properties.xml"));
+			environmentProperties.loadFromXML(new FileInputStream("classes"+System.getProperty("file.separator")+"conf"+System.getProperty("file.separator")+STG+"-properties.xml"));
 		}
 		configuration = new Configuration(environmentProperties.getProperty("authUrl"),
 										  environmentProperties.getProperty("apiUrl"),
